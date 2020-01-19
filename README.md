@@ -1,6 +1,11 @@
 # Code_Quiz
 Week 4 Code Quiz
 
+This activity was designed in Visual Studio Code using HTML, CSS, and JAVASCRIPT. To begin, an intial index.html, style.css, and script.js were created from scratch.
+<br><Br>
+
+
+
 ------
 ## User Story
 AS A coding bootcamp student<br>

@@ -3,7 +3,16 @@
 
 }
 
-.startquiz {
-    display: hide;
 
+.question2 {
+    display: none;
 }
+
+.question3 {
+    display: none;
+}
+
+.question4 {
+    display: none;
+}
+

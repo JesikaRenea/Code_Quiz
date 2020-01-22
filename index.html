@@ -7,7 +7,7 @@
     <title>Week 4 - Code Quiz</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="col-sm-6" >
-        <p style="text-align: right;">Timer</p>
+        <p style="text-align: right;" class="time">Timer</p>
         </div>
 
     </div>
@@ -42,15 +42,15 @@
         </div><br>
 
     <!--Question1-->
-      <div class="question1">
+      <div class="question1" style="display: none;">
         1. What does HTML stand for?
         <br><br>
 
         <ul class="answers">
-            <button type="button" class="btn btn-primary">A. Hyper Trainer Marking Language</button><br><br>
-            <button type="button" class="btn btn-primary">B. Hyper Text Marketing Language</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">A. Hyper Trainer Marking Language</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">B. Hyper Text Marketing Language</button><br><br>
             <button type="button" class="btn btn-primary correct1">C. Hyper Text Markup Language</button><br><br>
-            <button type="button" class="btn btn-primary">D. Hyper Text Markup Leveler</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">D. Hyper Text Markup Leveler</button><br><br>
         </ul>
 
       </div><br>
@@ -61,10 +61,10 @@
         <br><br>
 
         <ul class="answers">
-            <button type="button" class="btn btn-primary">A. An error you will never find</button><br><br>
-            <button type="button" class="btn btn-primary">B. An error you find at the end when the program gives out a wrong value due to logic error</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">A. An error you will never find</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">B. An error you find at the end when the program gives out a wrong value due to logic error</button><br><br>
             <button type="button" class="btn btn-primary correct2">C. An error caused by language rules being broken.</button><br><br>
-            <button type="button" class="btn btn-primary">D. An error due to user error</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">D. An error due to user error</button><br><br>
         </ul>
 
       </div><br>
@@ -74,10 +74,10 @@
         3. A short sections of code written to complete a task. 
         <br><br>
         <ul class="answers">
-            <button type="button" class="btn btn-primary">A. Buffer</button><br><br>
-            <button type="button" class="btn btn-primary">B. Array</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">A. Buffer</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">B. Array</button><br><br>
             <button type="button" class="btn btn-primary correct3">C. Function</button><br><br>
-            <button type="button" class="btn btn-primary">D. None of the above</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">D. None of the above</button><br><br>
         </ul>
       </div><br>
 
@@ -87,7 +87,7 @@
         <br><br>
 
         <ul class="answers">
-            <button type="button" class="btn btn-primary">A. True</button><br><br>
+            <button type="button" class="btn btn-primary" id="wrong">A. True</button><br><br>
             <button type="button" class="btn btn-primary correct4">B. False</button><br><br>
         </ul>
 
@@ -101,6 +101,8 @@
 
   </div> <!--Closing container-->
 
+
+  <script src="./script.js"></script>
   
 </body>
 </html>

@@ -39,7 +39,7 @@ function setTime() {
     questionOne = document.querySelector('.question1').style.display = "block";
     startQuiz = document.querySelector('.startquiz').style.display = "none";
   }
-    displayOne();  
+//displayOne();  
 
   wrongAnswer.addEventListener("click", 
   function deductTime(){
@@ -49,23 +49,24 @@ function setTime() {
       });
 
 
-correctAnswerOne.addEventListener("click", function displayOne() {
+correctAnswerOne.addEventListener("click", 
+function displayTwo() {
     questionOne = document.querySelector('.question1').style.display = "none";
     questionTwo = document.querySelector('.question2').style.display = "block";
 });
 
-displayTwo()
+//displayTwo()
 
-correctAnswerTwo.addEventListener("click", function displayThree(){
+correctAnswerTwo.addEventListener("click", 
+function displayThree(){
     questionTwo = document.querySelector('.question2').style.display = "none";
     questionThree = document.querySelector('.question3').style.display = "block";
 });
 
- displayThree();   
+// displayThree();   
 
-correctAnswerThree.addEventListener("click", function displayFour(){
+correctAnswerThree.addEventListener("click", 
+function displayFour(){
     questionThree = document.querySelector('.question3').style.display = "none";
     questionFour = document.querySelector('.question4').style.display = "block";
 });
-
-//displayFour();

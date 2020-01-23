@@ -5,6 +5,7 @@ var secondsLeft = 75;
 var startBtn = document.querySelector(".startbutton");
 var startQuiz = document.querySelector(".startquiz");
 var wrongAnswer = document.querySelector("#wrong");
+
 var correctAnswerOne = document.querySelector(".correct1")
 var correctAnswerTwo = document.querySelector(".correct2")
 var correctAnswerThree = document.querySelector(".correct3")
@@ -22,7 +23,7 @@ var user = {
 }
 
 
-
+// START QUIZ 
 startBtn.addEventListener("click", 
 function setTime() {
     var timerInterval = setInterval(function() {
@@ -32,21 +33,16 @@ function setTime() {
       if(secondsLeft === 0) {
         clearInterval(timerInterval);
         alert("You're out of time! Try again!");
-      }
+        location.reload();      }
     }, 1000);
-  
+
   function displayOne() {
     questionOne = document.querySelector('.question1').style.display = "block";
     startQuiz = document.querySelector('.startquiz').style.display = "none";
   }
-//displayOne();  
-
-  wrongAnswer.addEventListener("click", 
-  function deductTime(){
-     secondsLeft = secondsLeft - (10); 
-     console.log("click")
-
-      });
+  displayOne(); 
+});
+ // End START QUIZ
 
 
 correctAnswerOne.addEventListener("click", 
@@ -55,7 +51,6 @@ function displayTwo() {
     questionTwo = document.querySelector('.question2').style.display = "block";
 });
 
-//displayTwo()
 
 correctAnswerTwo.addEventListener("click", 
 function displayThree(){
@@ -63,10 +58,33 @@ function displayThree(){
     questionThree = document.querySelector('.question3').style.display = "block";
 });
 
-// displayThree();   
 
 correctAnswerThree.addEventListener("click", 
 function displayFour(){
     questionThree = document.querySelector('.question3').style.display = "none";
     questionFour = document.querySelector('.question4').style.display = "block";
 });
+
+correctAnswerFour.addEventListener("click", 
+function displayFour(){
+    questionFour = document.querySelector('.question4').style.display = "none";
+    scoreDisplay = document.querySelector('.scoredisplay').style.display = "block";  
+    
+    console.log(secondsLeft)
+
+document.querySelector('.score').innerHTML = secondsLeft
+localStorage.setItem('.score', 'score');
+
+});
+
+// document.getElementById("results").innerHTML = localStorage.getItem(".score");
+
+
+
+
+wrongAnswer.addEventListener("click", 
+function deductTime(){
+   secondsLeft = secondsLeft - (10); 
+   console.log("click")
+
+    });

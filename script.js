@@ -25,6 +25,13 @@ var user = {
 }
 var initials = document.querySelector(".initials")
 
+wrongAnswer.addEventListener("click", 
+function deductTime(){
+   secondsLeft = secondsLeft - (10); 
+   console.log("click")
+
+    });
+
 
 // START QUIZ 
 startBtn.addEventListener("click", 
@@ -47,13 +54,6 @@ function setTime() {
 });
  // End START QUIZ
  
- wrongAnswer.addEventListener("click", 
- function deductTime(){
-    secondsLeft = secondsLeft - (10); 
-    console.log("click")
- 
-     });
-
 
 correctAnswerOne.addEventListener("click", 
 function displayTwo() {

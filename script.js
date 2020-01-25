@@ -17,11 +17,13 @@ var questionThree = document.querySelector(".question3")
 var questionFour = document.querySelector(".question4")
 var scoreDisplay = document.querySelector(".scoredisplay")
 
+
 var highscores = [];
 var user = {
     name: "", 
     score: 0,
 }
+var initials = document.querySelector(".initials")
 
 
 // START QUIZ 
@@ -85,7 +87,7 @@ function displayFour(){
 document.querySelector('.score').innerHTML = secondsLeft
 
 highscores.push({
-  name: 'user name',
+  name: 'initials',
   score: secondsLeft,
 })
 

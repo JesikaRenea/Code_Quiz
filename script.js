@@ -17,6 +17,8 @@ var questionThree = document.querySelector(".question3")
 var questionFour = document.querySelector(".question4")
 var scoreDisplay = document.querySelector(".scoredisplay")
 
+var clearScores = document.querySelector(".clear")
+
 
 var highscores = [];
 var user = {
@@ -24,6 +26,7 @@ var user = {
     score: 0,
 }
 var initials = document.querySelector(".initials")
+
 
 wrongAnswer.addEventListener("click", 
 function deductTime(){
@@ -86,8 +89,10 @@ function displayFour(){
 
 document.querySelector('.score').innerHTML = secondsLeft
 
+
+
 highscores.push({
-  name: 'initials',
+  name: initials.value,
   score: secondsLeft,
 })
 
@@ -95,4 +100,9 @@ localStorage.setItem('highscores', JSON.stringify(highscores));
 
 });
 
+clearScores.addEventListener("click", 
+function clearScores() {
+  storage.clear();
+  console.log("click");
+});
 

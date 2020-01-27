@@ -20,11 +20,8 @@ var scoreDisplay = document.querySelector(".scoredisplay")
 var clearScores = document.querySelector(".clear")
 
 
-var highscores = [];
-var user = {
-    name: "", 
-    score: 0,
-}
+var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+
 var initials = document.querySelector(".initials")
 var submitBtn = document.querySelector("#submit-btn");
 
@@ -39,7 +36,7 @@ submitBtn.addEventListener("click", function(){
 
   initials.value = '';
   location.href = 'scores.html';
-  
+
 });
 
 

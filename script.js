@@ -87,7 +87,9 @@ function displayFour(){
 
     clearInterval(timerInterval)
 
+
 document.querySelector('.score').innerHTML = secondsLeft
+console.log(initials.value);
 
 
 
@@ -99,10 +101,3 @@ highscores.push({
 localStorage.setItem('highscores', JSON.stringify(highscores));
 
 });
-
-clearScores.addEventListener("click", 
-function clearScores() {
-  storage.clear();
-  console.log("click");
-});
-

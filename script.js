@@ -4,7 +4,7 @@ var secondsLeft = 75;
 
 var startBtn = document.querySelector(".startbutton");
 var startQuiz = document.querySelector(".startquiz");
-var wrongAnswer = document.querySelector(".wrong");
+var wrongAnswerList = document.querySelectorAll(".wrong");
 
 var correctAnswerOne = document.querySelector(".correct1")
 var correctAnswerTwo = document.querySelector(".correct2")
@@ -26,15 +26,47 @@ var user = {
     score: 0,
 }
 var initials = document.querySelector(".initials")
+var submitBtn = document.querySelector("#submit-btn");
+
+submitBtn.addEventListener("click", function(){
+  var userInitials = initials.value;
+
+  highscores.push({
+    name: userInitials,
+    score: secondsLeft,
+  })
+  localStorage.setItem('highscores', JSON.stringify(highscores));
+
+  initials.value = '';
+  location.href = 'scores.html';
+  
+});
 
 
-wrongAnswer.addEventListener("click", 
-function deductTime(){
-   secondsLeft = secondsLeft - (10); 
-   console.log("click")
 
-    });
 
+wrongAnswerList.forEach(function(element){
+  element.addEventListener("click", 
+  function deductTime(){
+     secondsLeft = secondsLeft - (10); 
+     console.log("click")
+  
+      });
+})
+
+function endQuiz(){
+  clearInterval(timerInterval);
+  document.querySelector('.scoredisplay').style.display = "block";  
+document.querySelector('.question1').style.display = "none";
+document.querySelector('.question2').style.display = "none";
+document.querySelector('.question3').style.display = "none";
+document.querySelector('.question4').style.display = "none";
+document.querySelector('.score').innerHTML = secondsLeft
+console.log(secondsLeft)
+
+
+
+}
 
 // START QUIZ 
 startBtn.addEventListener("click", 
@@ -44,10 +76,10 @@ function setTime() {
       timeEl.textContent = secondsLeft + " seconds left";
   
       if(secondsLeft === 0) {
-        clearInterval(timerInterval);
+        endQuiz;
         alert("You're out of time! Try again!");
-        location.reload();      }
-    }, 1000);
+        }
+          }, 1000);
 
   function displayOne() {
     questionOne = document.querySelector('.question1').style.display = "block";
@@ -78,26 +110,12 @@ function displayFour(){
     questionFour = document.querySelector('.question4').style.display = "block";
 });
 
-correctAnswerFour.addEventListener("click", 
-function displayFour(){
-    questionFour = document.querySelector('.question4').style.display = "none";
-    scoreDisplay = document.querySelector('.scoredisplay').style.display = "block";  
-    
-    console.log(secondsLeft)
-
-    clearInterval(timerInterval)
+correctAnswerFour.addEventListener("click", endQuiz)
 
 
-document.querySelector('.score').innerHTML = secondsLeft
+
+
 console.log(initials.value);
 
 
 
-highscores.push({
-  name: initials.value,
-  score: secondsLeft,
-})
-
-localStorage.setItem('highscores', JSON.stringify(highscores));
-
-});

@@ -30,7 +30,13 @@ THEN I can save my initials and score<br>
 -----
 ## Functional Deployed Application Links:
 
+https://drive.google.com/file/d/1OIr6k-aAOViRnm8SGcgVASkoi3i5vZno/preview
 
 -----
 ## Screenshots of Activity
+
+
+![StartQuiz](StartQuiz.png)
+![Question1](Quiz1.png)
+![QuizScores](QuizScoreInput.png)
 
